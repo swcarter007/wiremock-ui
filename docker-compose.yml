@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  ui:
+    build: .
+    container_name: wiremock-ui
+    ports:
+      - "8000:8000"
+    environment:
+      - WIREMOCK_URL=http://wiremock:8080
+    depends_on:
+      - wiremock
+
+  wiremock:
+    image: wiremock/wiremock:latest
+    container_name: wiremock
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./wiremock_data:/home/wiremock
+    command:
+      - "--local-response-templating"
+      - "--enable-browser-proxy"
+      - "--verbose"

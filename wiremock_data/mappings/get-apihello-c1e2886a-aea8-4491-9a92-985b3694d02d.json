@@ -1,0 +1,14 @@
+{
+  "id" : "c1e2886a-aea8-4491-9a92-985b3694d02d",
+  "request" : {
+    "urlPath" : "/api/hello",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"status\": \"ok\"}"
+  },
+  "uuid" : "c1e2886a-aea8-4491-9a92-985b3694d02d",
+  "persistent" : true,
+  "insertionIndex" : 1
+}
