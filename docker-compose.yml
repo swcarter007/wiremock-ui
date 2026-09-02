@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   ui:
     build: .
@@ -8,6 +6,9 @@ services:
       - "8000:8000"
     environment:
       - WIREMOCK_URL=http://wiremock:8080
+      - WIREMOCK_DATA_DIR=/app/wiremock_data
+    volumes:
+      - ./wiremock_data:/app/wiremock_data
     depends_on:
       - wiremock
 

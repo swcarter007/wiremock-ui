@@ -32,5 +32,5 @@ COPY --from=builder /app/ui/client/dist ./ui/client/dist
 # Set workdir back to ui for server execution
 WORKDIR /app/ui
 
-# Run the server
-CMD ["run", "--allow-net", "--allow-read", "--allow-env", "server.ts"]
+# Run the server with write permissions for persisting config
+CMD ["run", "--allow-net", "--allow-read", "--allow-write", "--allow-env", "server.ts"]
